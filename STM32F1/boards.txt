@@ -1010,3 +1010,15 @@ STM32VLD.menu.opt.ogstd.build.flags.optimize=-Og
 STM32VLD.menu.opt.ogstd.build.flags.ldspecs=
 
 ################################################################################
+
+genericSTM32F103C.menu.device_variant.STM32F103C8.upload.devname=STM32F103C8
+genericSTM32F103C.menu.device_variant.STM32F103CB.upload.devname=STM32F103CB
+genericSTM32F103R.menu.device_variant.STM32F103R8.upload.devname=STM32F103R8
+genericSTM32F103R.menu.device_variant.STM32F103RB.upload.devname=STM32F103RB
+genericSTM32F103R.menu.device_variant.STM32F103RC.upload.devname=STM32F103RC
+genericSTM32F103R.menu.device_variant.STM32F103RE.upload.devname=STM32F103RE
+genericSTM32F103R.menu.upload_method.jlinkMethod=JLink
+genericSTM32F103R.menu.upload_method.jlinkMethod.upload.protocol=jlink
+genericSTM32F103R.menu.upload_method.jlinkMethod.upload.tool=jlink_upload
+genericSTM32F103R.menu.upload_method.jlinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -D__SERIAL_USB -DGENERIC_BOOTLOADER 
+

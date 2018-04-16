@@ -16,4 +16,4 @@ rem: create commander script file with the tmp bin that the Arduino IDE creates
 @echo r >> %tmpbinfilepath%.jlink
 @echo q >> %tmpbinfilepath%.jlink
 
-JLink.exe -device STM32F103C8 -if SWD -speed auto -CommanderScript %tmpBinFilePath%.jlink
+"C:\Program Files (x86)\SEGGER\JLink_V614b\JLink.exe" -device %2 -if SWD -speed auto -CommanderScript %tmpBinFilePath%.jlink

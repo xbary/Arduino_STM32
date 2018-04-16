@@ -10,3 +10,4 @@ other/maple-bootloader/*~
 *.1
 platform.local.txt
 boards.local.txt
+/tools/arm-none-eabi-gcc/7-2017-q4
