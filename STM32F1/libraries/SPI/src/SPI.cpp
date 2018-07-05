@@ -363,8 +363,17 @@ uint8 SPIClass::transfer(uint8 byte) const
     spi_dev * spi_d = _currentSetting->spi_d;
     spi_rx_reg(spi_d); // read any previous data
     spi_tx_reg(spi_d, byte); // Write the data item to be transmitted into the SPI_DR register
-    while (spi_is_tx_empty(spi_d) == 0); // "5. Wait until TXE=1 ..."
-    while (spi_is_busy(spi_d) != 0); // "... and then wait until BSY=0 before disabling the SPI."
+	uint32_t c = 0;
+	while (spi_is_tx_empty(spi_d) == 0)
+	{
+		c++; if (c >= 512) break;
+	} // "5. Wait until TXE=1 ..."
+
+	c = 0;
+	while (spi_is_busy(spi_d) != 0)
+	{
+		c++; if (c >= 512) break;
+	} // "... and then wait until BSY=0 before disabling the SPI."
     return (uint8)spi_rx_reg(spi_d); // "... and read the last received data."
 }
 
